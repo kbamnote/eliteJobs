@@ -1,20 +1,32 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import './src/styles/global.css';
+import { AuthProvider } from './src/context/AuthContext';
+import { AppProvider } from './src/context/AppContext';
+import AppNavigator from './src/navigation/AppNavigator';
+import TestTailwind from './src/components/common/TestTailwind';
 
 export default function App() {
+  // Temporarily show test component to verify TailwindCSS
+  // Remove this after testing
+  const SHOW_TAILWIND_TEST = false;
+  
+  if (SHOW_TAILWIND_TEST) {
+    return (
+      <>
+        <TestTailwind />
+        <StatusBar style="auto" />
+      </>
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AuthProvider>
+      <AppProvider>
+        <AppNavigator />
+        <StatusBar style="auto" />
+      </AppProvider>
+    </AuthProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
