@@ -7,8 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build": "expo export -p web",
-    "build:web": "expo export -p web",
+    "build": "expo export -p web && node -e \"require('fs').writeFileSync('dist/_redirects', '/_expo/* /_expo/:splat 200\\n/assets/* /assets/:splat 200\\n/favicon.ico /favicon.ico 200\\n/metadata.json /metadata.json 200\\n/* /index.html 200\\n')\"",
+    "build:web": "expo export -p web && node -e \"require('fs').writeFileSync('dist/_redirects', '/_expo/* /_expo/:splat 200\\n/assets/* /assets/:splat 200\\n/favicon.ico /favicon.ico 200\\n/metadata.json /metadata.json 200\\n/* /index.html 200\\n')\"",
     "serve": "npx serve web-build -l 3000"
   },
   "dependencies": {
