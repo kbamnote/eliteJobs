@@ -6,7 +6,7 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "web-build"
+        "distDir": "dist"
       }
     }
   ],
@@ -20,9 +20,9 @@
       "dest": "/index.html"
     }
   ],
-  "buildCommand": "expo export:web",
-  "outputDirectory": "web-build",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "installCommand": "npm install",
-  "devCommand": "expo start --web",
+  "devCommand": "npm start",
   "framework": null
 }
