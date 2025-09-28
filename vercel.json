@@ -20,7 +20,7 @@
       "dest": "/index.html"
     }
   ],
-  "buildCommand": "npm run build",
+  "buildCommand": "expo export -p web",
   "outputDirectory": "dist",
   "installCommand": "npm install"
 }
