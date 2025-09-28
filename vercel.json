@@ -1,0 +1,28 @@
+{
+  "name": "job-search-app",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "web-build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "buildCommand": "expo export:web",
+  "outputDirectory": "web-build",
+  "installCommand": "npm install",
+  "devCommand": "expo start --web",
+  "framework": null
+}
